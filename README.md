@@ -213,3 +213,35 @@ After split:
 │ Free (8B)    │  (available for reuse)
 └──────────────┘
 ```
+
+## Memory Efficiency Features
+1. Implicit list with footer
+```
+Traditional Free List:       This Allocator (Implicit):
+┌─────┐─────┐────┐          ┌─────────┐────────┐
+│ Ptr │ Ptr │Data│          │ Header  │ Footer │
+│ Ptr │ Ptr │    │          │         │        │
+└─────┴─────┴────┘          └─────────┴────────┘
+
+Advantage: Don't need pointers in allocated blocks!
+Only store in free blocks' union.
+```
+2. Optimized Mini Blocks
+16-byte mini blocks use only header + mini_next pointer
+No footer = 8 bytes saved per mini block
+Common allocation size (especially for pointers)
+3. Boundary Tags (Footer)
+Free blocks have both header and footer so you can:
+
+Walk backward through the heap (coalesce with previous)
+Verify block consistency
+4. Prev Allocation Bits
+Instead of searching footers, use stored prev_alloc flag:
+
+O(1) check if previous block is free
+Avoids reading previous footer (cache-friendly)
+
+## References
+ - Course: CMU 15-213 Introduction to Computer Systems
+ - Textbook: Computer Systems: A Programmer's Perspective (CS:APP)
+ - Authors: Randal E. Bryant & David R. O'Hallaron

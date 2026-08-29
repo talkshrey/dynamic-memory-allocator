@@ -245,3 +245,6 @@ Avoids reading previous footer (cache-friendly)
  - Course: CMU 15-213 Introduction to Computer Systems
  - Textbook: Computer Systems: A Programmer's Perspective (CS:APP)
  - Authors: Randal E. Bryant & David R. O'Hallaron
+
+## Note
+Upon request, code can be shown for professional purposes only

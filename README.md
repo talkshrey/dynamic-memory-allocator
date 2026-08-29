@@ -106,12 +106,12 @@ graph LR
     A -->|Tradeoff| E["✗ More Complex<br/>14 lists to maintain"]
     A -->|Tradeoff| F["✗ Memory Overhead<br/>More pointers"]
     
-    style A fill:#ffcccc
-    style B fill:#ccffcc
-    style C fill:#ccffcc
-    style D fill:#ccffcc
-    style E fill:#ffcccc
-    style F fill:#ffcccc
+    style A fill:#ffffff
+    style B fill:#ffffff
+    style C fill:#ffffff
+    style D fill:#ffffff
+    style E fill:#ffffff
+    style F fill:#ffffff
 ```
 
 Mini blocks: exactly dsize (16 bytes)
@@ -192,9 +192,9 @@ graph TD
     E --> H["Done"]
     G --> H
     
-    style A fill:#ffcccc
-    style F fill:#ccffcc
-    style H fill:#ccffcc
+    style A fill:#ffffff
+    style F fill:#ffffff
+    style H fill:#ffffff
 ```
 
 ## Why this matters

@@ -1,1 +1,1 @@
-# dynamic-memory-allocator
+# Dynamic memory allocator
